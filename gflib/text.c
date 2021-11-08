@@ -47,181 +47,176 @@ struct TextGlyph gCurGlyph;
 TextFlags gTextFlags;
 
 const u8 gFontHalfRowOffsets[] =
-{
-    0x00, 0x01, 0x02, 0x00, 0x03, 0x04, 0x05, 0x03, 0x06, 0x07, 0x08, 0x06, 0x00, 0x01, 0x02, 0x00,
-    0x09, 0x0A, 0x0B, 0x09, 0x0C, 0x0D, 0x0E, 0x0C, 0x0F, 0x10, 0x11, 0x0F, 0x09, 0x0A, 0x0B, 0x09,
-    0x12, 0x13, 0x14, 0x12, 0x15, 0x16, 0x17, 0x15, 0x18, 0x19, 0x1A, 0x18, 0x12, 0x13, 0x14, 0x12,
-    0x00, 0x01, 0x02, 0x00, 0x03, 0x04, 0x05, 0x03, 0x06, 0x07, 0x08, 0x06, 0x00, 0x01, 0x02, 0x00,
-    0x1B, 0x1C, 0x1D, 0x1B, 0x1E, 0x1F, 0x20, 0x1E, 0x21, 0x22, 0x23, 0x21, 0x1B, 0x1C, 0x1D, 0x1B,
-    0x24, 0x25, 0x26, 0x24, 0x27, 0x28, 0x29, 0x27, 0x2A, 0x2B, 0x2C, 0x2A, 0x24, 0x25, 0x26, 0x24,
-    0x2D, 0x2E, 0x2F, 0x2D, 0x30, 0x31, 0x32, 0x30, 0x33, 0x34, 0x35, 0x33, 0x2D, 0x2E, 0x2F, 0x2D,
-    0x1B, 0x1C, 0x1D, 0x1B, 0x1E, 0x1F, 0x20, 0x1E, 0x21, 0x22, 0x23, 0x21, 0x1B, 0x1C, 0x1D, 0x1B,
-    0x36, 0x37, 0x38, 0x36, 0x39, 0x3A, 0x3B, 0x39, 0x3C, 0x3D, 0x3E, 0x3C, 0x36, 0x37, 0x38, 0x36,
-    0x3F, 0x40, 0x41, 0x3F, 0x42, 0x43, 0x44, 0x42, 0x45, 0x46, 0x47, 0x45, 0x3F, 0x40, 0x41, 0x3F,
-    0x48, 0x49, 0x4A, 0x48, 0x4B, 0x4C, 0x4D, 0x4B, 0x4E, 0x4F, 0x50, 0x4E, 0x48, 0x49, 0x4A, 0x48,
-    0x36, 0x37, 0x38, 0x36, 0x39, 0x3A, 0x3B, 0x39, 0x3C, 0x3D, 0x3E, 0x3C, 0x36, 0x37, 0x38, 0x36,
-    0x00, 0x01, 0x02, 0x00, 0x03, 0x04, 0x05, 0x03, 0x06, 0x07, 0x08, 0x06, 0x00, 0x01, 0x02, 0x00,
-    0x09, 0x0A, 0x0B, 0x09, 0x0C, 0x0D, 0x0E, 0x0C, 0x0F, 0x10, 0x11, 0x0F, 0x09, 0x0A, 0x0B, 0x09,
-    0x12, 0x13, 0x14, 0x12, 0x15, 0x16, 0x17, 0x15, 0x18, 0x19, 0x1A, 0x18, 0x12, 0x13, 0x14, 0x12,
-    0x00, 0x01, 0x02, 0x00, 0x03, 0x04, 0x05, 0x03, 0x06, 0x07, 0x08, 0x06, 0x00, 0x01, 0x02, 0x00
-};
+    {
+        0x00, 0x01, 0x02, 0x00, 0x03, 0x04, 0x05, 0x03, 0x06, 0x07, 0x08, 0x06, 0x00, 0x01, 0x02, 0x00,
+        0x09, 0x0A, 0x0B, 0x09, 0x0C, 0x0D, 0x0E, 0x0C, 0x0F, 0x10, 0x11, 0x0F, 0x09, 0x0A, 0x0B, 0x09,
+        0x12, 0x13, 0x14, 0x12, 0x15, 0x16, 0x17, 0x15, 0x18, 0x19, 0x1A, 0x18, 0x12, 0x13, 0x14, 0x12,
+        0x00, 0x01, 0x02, 0x00, 0x03, 0x04, 0x05, 0x03, 0x06, 0x07, 0x08, 0x06, 0x00, 0x01, 0x02, 0x00,
+        0x1B, 0x1C, 0x1D, 0x1B, 0x1E, 0x1F, 0x20, 0x1E, 0x21, 0x22, 0x23, 0x21, 0x1B, 0x1C, 0x1D, 0x1B,
+        0x24, 0x25, 0x26, 0x24, 0x27, 0x28, 0x29, 0x27, 0x2A, 0x2B, 0x2C, 0x2A, 0x24, 0x25, 0x26, 0x24,
+        0x2D, 0x2E, 0x2F, 0x2D, 0x30, 0x31, 0x32, 0x30, 0x33, 0x34, 0x35, 0x33, 0x2D, 0x2E, 0x2F, 0x2D,
+        0x1B, 0x1C, 0x1D, 0x1B, 0x1E, 0x1F, 0x20, 0x1E, 0x21, 0x22, 0x23, 0x21, 0x1B, 0x1C, 0x1D, 0x1B,
+        0x36, 0x37, 0x38, 0x36, 0x39, 0x3A, 0x3B, 0x39, 0x3C, 0x3D, 0x3E, 0x3C, 0x36, 0x37, 0x38, 0x36,
+        0x3F, 0x40, 0x41, 0x3F, 0x42, 0x43, 0x44, 0x42, 0x45, 0x46, 0x47, 0x45, 0x3F, 0x40, 0x41, 0x3F,
+        0x48, 0x49, 0x4A, 0x48, 0x4B, 0x4C, 0x4D, 0x4B, 0x4E, 0x4F, 0x50, 0x4E, 0x48, 0x49, 0x4A, 0x48,
+        0x36, 0x37, 0x38, 0x36, 0x39, 0x3A, 0x3B, 0x39, 0x3C, 0x3D, 0x3E, 0x3C, 0x36, 0x37, 0x38, 0x36,
+        0x00, 0x01, 0x02, 0x00, 0x03, 0x04, 0x05, 0x03, 0x06, 0x07, 0x08, 0x06, 0x00, 0x01, 0x02, 0x00,
+        0x09, 0x0A, 0x0B, 0x09, 0x0C, 0x0D, 0x0E, 0x0C, 0x0F, 0x10, 0x11, 0x0F, 0x09, 0x0A, 0x0B, 0x09,
+        0x12, 0x13, 0x14, 0x12, 0x15, 0x16, 0x17, 0x15, 0x18, 0x19, 0x1A, 0x18, 0x12, 0x13, 0x14, 0x12,
+        0x00, 0x01, 0x02, 0x00, 0x03, 0x04, 0x05, 0x03, 0x06, 0x07, 0x08, 0x06, 0x00, 0x01, 0x02, 0x00};
 
 const u8 gDownArrowTiles[] = INCBIN_U8("graphics/fonts/down_arrow.4bpp");
 const u8 gDarkDownArrowTiles[] = INCBIN_U8("graphics/fonts/down_arrow_RS.4bpp");
 const u8 gUnusedFRLGBlankedDownArrow[] = INCBIN_U8("graphics/fonts/unused_frlg_blanked_down_arrow.4bpp");
 const u8 gUnusedFRLGDownArrow[] = INCBIN_U8("graphics/fonts/unused_frlg_down_arrow.4bpp");
-const u8 gDownArrowYCoords[] = { 0, 1, 2, 1 };
-const u8 gWindowVerticalScrollSpeeds[] = { 1, 2, 4, 0x0 };
+const u8 gDownArrowYCoords[] = {0, 1, 2, 1};
+const u8 gWindowVerticalScrollSpeeds[] = {1, 2, 4, 0x0};
 
 static const struct GlyphWidthFunc sGlyphWidthFuncs[] =
-{
-    { FONT_SMALL,        GetGlyphWidth_Small },
-    { FONT_NORMAL,       GetGlyphWidth_Normal },
-    { FONT_SHORT,        GetGlyphWidth_Short },
-    { FONT_SHORT_COPY_1, GetGlyphWidth_Short },
-    { FONT_SHORT_COPY_2, GetGlyphWidth_Short },
-    { FONT_SHORT_COPY_3, GetGlyphWidth_Short },
-    { FONT_BRAILLE,      GetGlyphWidth_Braille },
-    { FONT_NARROW,       GetGlyphWidth_Narrow },
-    { FONT_SMALL_NARROW, GetGlyphWidth_SmallNarrow }
-};
+    {
+        {FONT_SMALL, GetGlyphWidth_Small},
+        {FONT_NORMAL, GetGlyphWidth_Normal},
+        {FONT_SHORT, GetGlyphWidth_Short},
+        {FONT_SHORT_COPY_1, GetGlyphWidth_Short},
+        {FONT_SHORT_COPY_2, GetGlyphWidth_Short},
+        {FONT_SHORT_COPY_3, GetGlyphWidth_Short},
+        {FONT_BRAILLE, GetGlyphWidth_Braille},
+        {FONT_NARROW, GetGlyphWidth_Narrow},
+        {FONT_SMALL_NARROW, GetGlyphWidth_SmallNarrow}};
 
 const struct KeypadIcon gKeypadIcons[] =
-{
-    [CHAR_A_BUTTON]       = {  0x0,  0x8, 0xC },
-    [CHAR_B_BUTTON]       = {  0x1,  0x8, 0xC },
-    [CHAR_L_BUTTON]       = {  0x2, 0x10, 0xC },
-    [CHAR_R_BUTTON]       = {  0x4, 0x10, 0xC },
-    [CHAR_START_BUTTON]   = {  0x6, 0x18, 0xC },
-    [CHAR_SELECT_BUTTON]  = {  0x9, 0x18, 0xC },
-    [CHAR_DPAD_UP]        = {  0xC,  0x8, 0xC },
-    [CHAR_DPAD_DOWN]      = {  0xD,  0x8, 0xC },
-    [CHAR_DPAD_LEFT]      = {  0xE,  0x8, 0xC },
-    [CHAR_DPAD_RIGHT]     = {  0xF,  0x8, 0xC },
-    [CHAR_DPAD_UPDOWN]    = { 0x20,  0x8, 0xC },
-    [CHAR_DPAD_LEFTRIGHT] = { 0x21,  0x8, 0xC },
-    [CHAR_DPAD_NONE]      = { 0x22,  0x8, 0xC }
-};
+    {
+        [CHAR_A_BUTTON] = {0x0, 0x8, 0xC},
+        [CHAR_B_BUTTON] = {0x1, 0x8, 0xC},
+        [CHAR_L_BUTTON] = {0x2, 0x10, 0xC},
+        [CHAR_R_BUTTON] = {0x4, 0x10, 0xC},
+        [CHAR_START_BUTTON] = {0x6, 0x18, 0xC},
+        [CHAR_SELECT_BUTTON] = {0x9, 0x18, 0xC},
+        [CHAR_DPAD_UP] = {0xC, 0x8, 0xC},
+        [CHAR_DPAD_DOWN] = {0xD, 0x8, 0xC},
+        [CHAR_DPAD_LEFT] = {0xE, 0x8, 0xC},
+        [CHAR_DPAD_RIGHT] = {0xF, 0x8, 0xC},
+        [CHAR_DPAD_UPDOWN] = {0x20, 0x8, 0xC},
+        [CHAR_DPAD_LEFTRIGHT] = {0x21, 0x8, 0xC},
+        [CHAR_DPAD_NONE] = {0x22, 0x8, 0xC}};
 
 const u8 gKeypadIconTiles[] = INCBIN_U8("graphics/fonts/keypad_icons.4bpp");
 
 static const struct FontInfo sFontInfos[] =
-{
-    [FONT_SMALL] = {
-        .fontFunction = FontFunc_Small,
-        .maxLetterWidth = 5,
-        .maxLetterHeight = 12,
-        .letterSpacing = 0,
-        .lineSpacing = 0,
-        .fgColor = 2,
-        .bgColor = 1,
-        .shadowColor = 3,
-    },
-    [FONT_NORMAL] = {
-        .fontFunction = FontFunc_Normal,
-        .maxLetterWidth = 6,
-        .maxLetterHeight = 16,
-        .letterSpacing = 0,
-        .lineSpacing = 0,
-        .fgColor = 2,
-        .bgColor = 1,
-        .shadowColor = 3,
-    },
-    [FONT_SHORT] = {
-        .fontFunction = FontFunc_Short,
-        .maxLetterWidth = 6,
-        .maxLetterHeight = 14,
-        .letterSpacing = 0,
-        .lineSpacing = 0,
-        .fgColor = 2,
-        .bgColor = 1,
-        .shadowColor = 3,
-    },
-    [FONT_SHORT_COPY_1] = {
-        .fontFunction = FontFunc_ShortCopy1,
-        .maxLetterWidth = 6,
-        .maxLetterHeight =  14,
-        .letterSpacing = 0,
-        .lineSpacing = 0,
-        .fgColor = 2,
-        .bgColor = 1,
-        .shadowColor = 3,
-    },
-    [FONT_SHORT_COPY_2] = {
-        .fontFunction = FontFunc_ShortCopy2,
-        .maxLetterWidth = 6,
-        .maxLetterHeight =  14,
-        .letterSpacing = 0,
-        .lineSpacing = 0,
-        .fgColor = 2,
-        .bgColor = 1,
-        .shadowColor = 3,
-    },
-    [FONT_SHORT_COPY_3] = {
-        .fontFunction = FontFunc_ShortCopy3,
-        .maxLetterWidth = 6,
-        .maxLetterHeight =  14,
-        .letterSpacing = 0,
-        .lineSpacing = 0,
-        .fgColor = 2,
-        .bgColor = 1,
-        .shadowColor = 3,
-    },
-    [FONT_BRAILLE] = {
-        .fontFunction = FontFunc_Braille,
-        .maxLetterWidth = 8,
-        .maxLetterHeight = 16,
-        .letterSpacing = 0,
-        .lineSpacing = 8,
-        .fgColor = 2,
-        .bgColor = 1,
-        .shadowColor = 3,
-    },
-    [FONT_NARROW] = {
-        .fontFunction = FontFunc_Narrow,
-        .maxLetterWidth = 5,
-        .maxLetterHeight = 16,
-        .letterSpacing = 0,
-        .lineSpacing = 0,
-        .fgColor = 2,
-        .bgColor = 1,
-        .shadowColor = 3,
-    },
-    [FONT_SMALL_NARROW] = {
-        .fontFunction = FontFunc_SmallNarrow,
-        .maxLetterWidth = 5,
-        .maxLetterHeight = 8,
-        .letterSpacing = 0,
-        .lineSpacing = 0,
-        .fgColor = 2,
-        .bgColor = 1,
-        .shadowColor = 3,
-    },
-    [FONT_BOLD] = {
-        .fontFunction = NULL,
-        .maxLetterWidth = 8,
-        .maxLetterHeight = 8,
-        .letterSpacing = 0,
-        .lineSpacing = 0,
-        .fgColor = 1,
-        .bgColor = 2,
-        .shadowColor = 15,
-    }
-};
+    {
+        [FONT_SMALL] = {
+            .fontFunction = FontFunc_Small,
+            .maxLetterWidth = 5,
+            .maxLetterHeight = 12,
+            .letterSpacing = 0,
+            .lineSpacing = 0,
+            .fgColor = 2,
+            .bgColor = 1,
+            .shadowColor = 3,
+        },
+        [FONT_NORMAL] = {
+            .fontFunction = FontFunc_Normal,
+            .maxLetterWidth = 6,
+            .maxLetterHeight = 16,
+            .letterSpacing = 0,
+            .lineSpacing = 0,
+            .fgColor = 2,
+            .bgColor = 1,
+            .shadowColor = 3,
+        },
+        [FONT_SHORT] = {
+            .fontFunction = FontFunc_Short,
+            .maxLetterWidth = 6,
+            .maxLetterHeight = 14,
+            .letterSpacing = 0,
+            .lineSpacing = 0,
+            .fgColor = 2,
+            .bgColor = 1,
+            .shadowColor = 3,
+        },
+        [FONT_SHORT_COPY_1] = {
+            .fontFunction = FontFunc_ShortCopy1,
+            .maxLetterWidth = 6,
+            .maxLetterHeight = 14,
+            .letterSpacing = 0,
+            .lineSpacing = 0,
+            .fgColor = 2,
+            .bgColor = 1,
+            .shadowColor = 3,
+        },
+        [FONT_SHORT_COPY_2] = {
+            .fontFunction = FontFunc_ShortCopy2,
+            .maxLetterWidth = 6,
+            .maxLetterHeight = 14,
+            .letterSpacing = 0,
+            .lineSpacing = 0,
+            .fgColor = 2,
+            .bgColor = 1,
+            .shadowColor = 3,
+        },
+        [FONT_SHORT_COPY_3] = {
+            .fontFunction = FontFunc_ShortCopy3,
+            .maxLetterWidth = 6,
+            .maxLetterHeight = 14,
+            .letterSpacing = 0,
+            .lineSpacing = 0,
+            .fgColor = 2,
+            .bgColor = 1,
+            .shadowColor = 3,
+        },
+        [FONT_BRAILLE] = {
+            .fontFunction = FontFunc_Braille,
+            .maxLetterWidth = 8,
+            .maxLetterHeight = 16,
+            .letterSpacing = 0,
+            .lineSpacing = 8,
+            .fgColor = 2,
+            .bgColor = 1,
+            .shadowColor = 3,
+        },
+        [FONT_NARROW] = {
+            .fontFunction = FontFunc_Narrow,
+            .maxLetterWidth = 5,
+            .maxLetterHeight = 16,
+            .letterSpacing = 0,
+            .lineSpacing = 0,
+            .fgColor = 2,
+            .bgColor = 1,
+            .shadowColor = 3,
+        },
+        [FONT_SMALL_NARROW] = {
+            .fontFunction = FontFunc_SmallNarrow,
+            .maxLetterWidth = 5,
+            .maxLetterHeight = 8,
+            .letterSpacing = 0,
+            .lineSpacing = 0,
+            .fgColor = 2,
+            .bgColor = 1,
+            .shadowColor = 3,
+        },
+        [FONT_BOLD] = {
+            .fontFunction = NULL,
+            .maxLetterWidth = 8,
+            .maxLetterHeight = 8,
+            .letterSpacing = 0,
+            .lineSpacing = 0,
+            .fgColor = 1,
+            .bgColor = 2,
+            .shadowColor = 15,
+        }};
 
 static const u8 sMenuCursorDimensions[][2] =
-{
-    [FONT_SMALL]        = { 8,  12 },
-    [FONT_NORMAL]       = { 8,  15 },
-    [FONT_SHORT]        = { 8,  14 },
-    [FONT_SHORT_COPY_1] = { 8,  14 },
-    [FONT_SHORT_COPY_2] = { 8,  14 },
-    [FONT_SHORT_COPY_3] = { 8,  14 },
-    [FONT_BRAILLE]      = { 8,  16 },
-    [FONT_NARROW]       = { 8,  15 },
-    [FONT_SMALL_NARROW] = { 8,   8 },
-    [FONT_BOLD]         = {}
-};
+    {
+        [FONT_SMALL] = {8, 12},
+        [FONT_NORMAL] = {8, 15},
+        [FONT_SHORT] = {8, 14},
+        [FONT_SHORT_COPY_1] = {8, 14},
+        [FONT_SHORT_COPY_2] = {8, 14},
+        [FONT_SHORT_COPY_3] = {8, 14},
+        [FONT_BRAILLE] = {8, 16},
+        [FONT_NARROW] = {8, 15},
+        [FONT_SMALL_NARROW] = {8, 8},
+        [FONT_BOLD] = {}};
 
 const u16 gFontBoldJapaneseGlyphs[] = INCBIN_U16("graphics/fonts/bold.hwjpnfont");
 
@@ -639,7 +634,7 @@ void ClearTextSpan(struct TextPrinter *textPrinter, u32 width)
     struct Window *window;
     struct Bitmap pixels_data;
     struct TextGlyph *glyph;
-    u8* glyphHeight;
+    u8 *glyphHeight;
 
     if (gLastTextBgColor != 0)
     {
@@ -795,13 +790,13 @@ void TextPrinterDrawDownArrow(struct TextPrinter *textPrinter)
 
             switch (gTextFlags.useAlternateDownArrow)
             {
-                case FALSE:
-                default:
-                    arrowTiles = gDownArrowTiles;
-                    break;
-                case TRUE:
-                    arrowTiles = gDarkDownArrowTiles;
-                    break;
+            case FALSE:
+            default:
+                arrowTiles = gDownArrowTiles;
+                break;
+            case TRUE:
+                arrowTiles = gDarkDownArrowTiles;
+                break;
             }
 
             BlitBitmapRectToWindow(
@@ -902,13 +897,13 @@ void DrawDownArrow(u8 windowId, u16 x, u16 y, u8 bgColor, bool8 drawArrow, u8 *c
         {
             switch (gTextFlags.useAlternateDownArrow)
             {
-                case 0:
-                default:
-                    arrowTiles = gDownArrowTiles;
-                    break;
-                case 1:
-                    arrowTiles = gDarkDownArrowTiles;
-                    break;
+            case 0:
+            default:
+                arrowTiles = gDownArrowTiles;
+                break;
+            case 1:
+                arrowTiles = gDarkDownArrowTiles;
+                break;
             }
 
             BlitBitmapRectToWindow(
@@ -1007,6 +1002,7 @@ u16 RenderText(struct TextPrinter *textPrinter)
                 textPrinter->printerTemplate.currentChar++;
                 return 2;
             case EXT_CTRL_CODE_RESET_SIZE:
+                subStruct->fontId = textPrinter->printerTemplate.fontId;
                 return 2;
             case EXT_CTRL_CODE_PAUSE:
                 textPrinter->delayCounter = *textPrinter->printerTemplate.currentChar;
@@ -1073,18 +1069,18 @@ u16 RenderText(struct TextPrinter *textPrinter)
                 textPrinter->printerTemplate.currentChar++;
                 return 2;
             case EXT_CTRL_CODE_CLEAR_TO:
+            {
+                widthHelper = *textPrinter->printerTemplate.currentChar;
+                widthHelper += textPrinter->printerTemplate.x;
+                textPrinter->printerTemplate.currentChar++;
+                width = widthHelper - textPrinter->printerTemplate.currentX;
+                if (width > 0)
                 {
-                    widthHelper = *textPrinter->printerTemplate.currentChar;
-                    widthHelper += textPrinter->printerTemplate.x;
-                    textPrinter->printerTemplate.currentChar++;
-                    width = widthHelper - textPrinter->printerTemplate.currentX;
-                    if (width > 0)
-                    {
-                        ClearTextSpan(textPrinter, width);
-                        textPrinter->printerTemplate.currentX += width;
-                        return 0;
-                    }
+                    ClearTextSpan(textPrinter, width);
+                    textPrinter->printerTemplate.currentX += width;
+                    return 0;
                 }
+            }
                 return 2;
             case EXT_CTRL_CODE_MIN_LETTER_SPACING:
                 textPrinter->minLetterSpacing = *textPrinter->printerTemplate.currentChar++;
@@ -1363,17 +1359,17 @@ s32 GetStringWidth(u8 fontId, const u8 *str, s16 letterSpacing)
         case PLACEHOLDER_BEGIN:
             switch (*++str)
             {
-                case PLACEHOLDER_ID_STRING_VAR_1:
-                    bufferPointer = gStringVar1;
-                    break;
-                case PLACEHOLDER_ID_STRING_VAR_2:
-                    bufferPointer = gStringVar2;
-                    break;
-                case PLACEHOLDER_ID_STRING_VAR_3:
-                    bufferPointer = gStringVar3;
-                    break;
-                default:
-                    return 0;
+            case PLACEHOLDER_ID_STRING_VAR_1:
+                bufferPointer = gStringVar1;
+                break;
+            case PLACEHOLDER_ID_STRING_VAR_2:
+                bufferPointer = gStringVar2;
+                break;
+            case PLACEHOLDER_ID_STRING_VAR_3:
+                bufferPointer = gStringVar3;
+                break;
+            default:
+                return 0;
             }
         case CHAR_DYNAMIC:
             if (bufferPointer == NULL)
@@ -1442,6 +1438,11 @@ s32 GetStringWidth(u8 fontId, const u8 *str, s16 letterSpacing)
                 isJapanese = 0;
                 break;
             case EXT_CTRL_CODE_RESET_SIZE:
+                if (letterSpacing == -1)
+                    localLetterSpacing = GetFontAttribute(fontId, FONTATTR_LETTER_SPACING);
+                else
+                    localLetterSpacing = letterSpacing;
+                break;
             case EXT_CTRL_CODE_PAUSE_UNTIL_PRESS:
             case EXT_CTRL_CODE_WAIT_SE:
             case EXT_CTRL_CODE_FILL_WINDOW:
@@ -1598,8 +1599,7 @@ u8 RenderTextHandleBold(u8 *pixels, u8 fontId, u8 *str)
             pixels += 0x40;
             break;
         }
-    }
-    while (temp != EOS);
+    } while (temp != EOS);
 
     RestoreTextColors(&colorBackup[0], &colorBackup[1], &colorBackup[2]);
     return 1;
@@ -1646,30 +1646,30 @@ u8 GetFontAttribute(u8 fontId, u8 attributeId)
     int result = 0;
     switch (attributeId)
     {
-        case FONTATTR_MAX_LETTER_WIDTH:
-            result = sFontInfos[fontId].maxLetterWidth;
-            break;
-        case FONTATTR_MAX_LETTER_HEIGHT:
-            result = sFontInfos[fontId].maxLetterHeight;
-            break;
-        case FONTATTR_LETTER_SPACING:
-            result = sFontInfos[fontId].letterSpacing;
-            break;
-        case FONTATTR_LINE_SPACING:
-            result = sFontInfos[fontId].lineSpacing;
-            break;
-        case FONTATTR_UNKNOWN:
-            result = sFontInfos[fontId].unk;
-            break;
-        case FONTATTR_COLOR_FOREGROUND:
-            result = sFontInfos[fontId].fgColor;
-            break;
-        case FONTATTR_COLOR_BACKGROUND:
-            result = sFontInfos[fontId].bgColor;
-            break;
-        case FONTATTR_COLOR_SHADOW:
-            result = sFontInfos[fontId].shadowColor;
-            break;
+    case FONTATTR_MAX_LETTER_WIDTH:
+        result = sFontInfos[fontId].maxLetterWidth;
+        break;
+    case FONTATTR_MAX_LETTER_HEIGHT:
+        result = sFontInfos[fontId].maxLetterHeight;
+        break;
+    case FONTATTR_LETTER_SPACING:
+        result = sFontInfos[fontId].letterSpacing;
+        break;
+    case FONTATTR_LINE_SPACING:
+        result = sFontInfos[fontId].lineSpacing;
+        break;
+    case FONTATTR_UNKNOWN:
+        result = sFontInfos[fontId].unk;
+        break;
+    case FONTATTR_COLOR_FOREGROUND:
+        result = sFontInfos[fontId].fgColor;
+        break;
+    case FONTATTR_COLOR_BACKGROUND:
+        result = sFontInfos[fontId].bgColor;
+        break;
+    case FONTATTR_COLOR_SHADOW:
+        result = sFontInfos[fontId].shadowColor;
+        break;
     }
     return result;
 }
@@ -1681,7 +1681,7 @@ u8 GetMenuCursorDimensionByFont(u8 fontId, u8 whichDimension)
 
 static void DecompressGlyph_Small(u16 glyphId, bool32 isJapanese)
 {
-    const u16* glyphs;
+    const u16 *glyphs;
 
     if (isJapanese == 1)
     {
@@ -1723,7 +1723,7 @@ static u32 GetGlyphWidth_Small(u16 glyphId, bool32 isJapanese)
 
 static void DecompressGlyph_Narrow(u16 glyphId, bool32 isJapanese)
 {
-    const u16* glyphs;
+    const u16 *glyphs;
 
     if (isJapanese == TRUE)
     {
@@ -1765,7 +1765,7 @@ static u32 GetGlyphWidth_Narrow(u16 glyphId, bool32 isJapanese)
 
 static void DecompressGlyph_SmallNarrow(u16 glyphId, bool32 isJapanese)
 {
-    const u16* glyphs;
+    const u16 *glyphs;
 
     if (isJapanese == TRUE)
     {
@@ -1807,15 +1807,15 @@ static u32 GetGlyphWidth_SmallNarrow(u16 glyphId, bool32 isJapanese)
 
 static void DecompressGlyph_Short(u16 glyphId, bool32 isJapanese)
 {
-    const u16* glyphs;
+    const u16 *glyphs;
 
     if (isJapanese == TRUE)
     {
         glyphs = gFontShortJapaneseGlyphs + (0x100 * (glyphId >> 0x3)) + (0x10 * (glyphId & 0x7));
         DecompressGlyphTile(glyphs, gCurGlyph.gfxBufferTop);
         DecompressGlyphTile(glyphs + 0x8, gCurGlyph.gfxBufferTop + 8);
-        DecompressGlyphTile(glyphs + 0x80, gCurGlyph.gfxBufferBottom);    // gCurGlyph + 0x20
-        DecompressGlyphTile(glyphs + 0x88, gCurGlyph.gfxBufferBottom + 8);    // gCurGlyph + 0x60
+        DecompressGlyphTile(glyphs + 0x80, gCurGlyph.gfxBufferBottom);     // gCurGlyph + 0x20
+        DecompressGlyphTile(glyphs + 0x88, gCurGlyph.gfxBufferBottom + 8); // gCurGlyph + 0x60
         gCurGlyph.width = gFontShortJapaneseGlyphWidths[glyphId];
         gCurGlyph.height = 14;
     }
@@ -1851,7 +1851,7 @@ static u32 GetGlyphWidth_Short(u16 glyphId, bool32 isJapanese)
 
 static void DecompressGlyph_Normal(u16 glyphId, bool32 isJapanese)
 {
-    const u16* glyphs;
+    const u16 *glyphs;
 
     if (isJapanese == TRUE)
     {
@@ -1893,7 +1893,7 @@ static u32 GetGlyphWidth_Normal(u16 glyphId, bool32 isJapanese)
 
 static void DecompressGlyph_Bold(u16 glyphId)
 {
-    const u16* glyphs;
+    const u16 *glyphs;
 
     glyphs = gFontBoldJapaneseGlyphs + (0x100 * (glyphId >> 4)) + (0x8 * (glyphId & 0xF));
     DecompressGlyphTile(glyphs, gCurGlyph.gfxBufferTop);
